@@ -1,0 +1,23 @@
+const int relayPin = 3;  // Pin connected to the relay module
+
+void setup() {
+  Serial.begin(9600);  // Initialize serial communication
+  pinMode(relayPin, OUTPUT);  // Set relay pin as output
+  digitalWrite(relayPin, HIGH);  // Start with the relay off (HIGH state for normally closed relay)
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char signal = Serial.read();  // Read the signal from Python
+
+    if (signal == '1') {
+      // Stop the gear motor by cutting power
+      digitalWrite(relayPin, LOW);  // Activate the relay (LOW state for normally closed relay)
+      Serial.println("Motor Stopped");
+    } else if (signal == '0') {
+      // Resume normal operation
+      digitalWrite(relayPin, HIGH);  // Deactivate the relay
+      Serial.println("Motor Running");
+    }
+  }
+}
