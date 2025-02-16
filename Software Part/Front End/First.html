@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Monitoring System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styl.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Driver Monitoring System</h1>
+        </header>
+
+        <div class="button-group">
+            <button onclick="startDemo()" class="btn primary">Start Demo</button>
+            <button onclick="stopDemo()" class="btn danger">Stop Demo</button>
+            <button onclick="downloadLog()" class="btn secondary">Download Log</button>
+        </div>
+
+        <section id="activity-feed">
+            <h2>Activity Feed</h2>
+            <ul id="activity-list"></ul>
+        </section>
+    </div>
+
+    <script>
+        function startDemo() {
+            fetch('/start_demo')
+                .then(response => response.text())
+                .then(data => alert(data));
+        }
+
+        function stopDemo() {
+            fetch('/stop_demo')
+                .then(response => response.text())
+                .then(data => alert(data));
+        }
+
+        function downloadLog() {
+            window.location.href = '/download_log';
+        }
+
+        function updateActivityFeed() {
+            fetch('/activity_feed')
+                .then(response => response.json())
+                .then(data => {
+                    const activityList = document.getElementById('activity-list');
+                    activityList.innerHTML = '';
+                    data.forEach(activity => {
+                        const li = document.createElement('li');
+                        li.textContent = activity;
+                        activityList.appendChild(li);
+                    });
+                });
+        }
+
+        setInterval(updateActivityFeed, 5000);
+    </script>
+</body>
+</html>
