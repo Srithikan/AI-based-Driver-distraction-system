@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI DRIVE - Smart Driver Monitoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header class="nav-container">
+    <div class="logo">
+        <a href="#">AI DRIVE</a>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#book-demo" class="book-demo-nav">Book a Demo</a></li>
+        </ul>
+    </nav>
+    <div class="logo-container">
+        <!-- <img src="{{ url_for('static', filename='assets/yyyy.png') }}" alt="AI Drive Logo"> -->
+    </div>
+    <div class="menu-toggle">&#9776;</div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <video autoplay muted loop class="bg-video">
+        <source src="{{ url_for('static', filename='assets/13092245_3840_2160_30fps.mp4') }}" type="video/mp4">
+    </video>
+    <div class="overlay">
+        <h1>AI-Driven Safety for Smarter Roads</h1>
+        <p style="color:white">Enhancing driver awareness and reducing accidents through AI.</p>
+    </div>
+</section>
+
+<!-- Book a Demo Section -->
+<section id="book-demo" class="book-demo">
+    <!-- Top Running Cars in Black Div -->
+    <div class="car-container top-car-container">
+        <div class="car-track">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+        </div>
+    </div>
+
+    <!-- Book a Demo Content -->
+    <div class="book-demo-container">
+        <h3>Ready to Experience AI-Driven Safety?</h3>
+        <p>Book a demo today and see how AI DRIVE can enhance your driving safety.</p>
+        <a href="{{ url_for('first') }}" class="book-demo-button">Book a Demo</a>
+
+
+
+    </div>
+
+    <!-- Bottom Running Cars in Black Div -->
+    <div class="car-container bottom-car-container">
+        <div class="car-track">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+            <img src="{{ url_for('static', filename='assets/left_white.jpg') }}" class="small-car" alt="Small Car">
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <h2>Key Features</h2>
+    <div class="feature-list">
+        <div class="feature">
+            <h3>Driver Drowsiness Detection</h3>
+            <p>Detects signs of driver drowsiness using AI-driven analysis of eye movements.</p>
+            <p>Alerts the driver if drowsiness is detected to prevent accidents.</p>
+        </div>
+        <div class="feature">
+            <h3>Distraction Monitoring (Phone Use)</h3>
+            <p>Monitors if the driver is distracted by their phone or other devices.</p>
+            <p>Issues alerts when dangerous distractions are detected while driving.</p>
+        </div>
+        <div class="feature">
+            <h3>Distraction Monitoring (Looking Away)</h3>
+            <p>Tracks the driver's eye movements to ensure they're focused on the road.</p>
+            <p>Alerts the driver if they look away from the road for too long.</p>
+        </div>
+        <div class="feature">
+            <h3>Eye Blink Sensor for Speed Control</h3>
+            <p>Monitors blink patterns to assess driver fatigue or inattention.</p>
+            <p>Automatically adjusts vehicle speed if dangerous drowsiness is detected.</p>
+        </div>
+        <div class="feature">
+            <h3>Real-time Alerts & Reports</h3>
+            <p>Instantly notifies the driver of any detected issues, like drowsiness or distractions.</p>
+            <p>Provides detailed reports for further analysis and improvement of driver safety.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Overview Section -->
+<section id="overview" class="overview">
+    <div class="overview-container">
+        <h2>How It Works</h2>
+        <p>
+            Our AI model tracks eye movements to detect drowsiness or distraction. If the driver closes their eyes for 3-4 seconds, an alert is triggered.
+            If closed for 5 seconds, the system automatically slows down the vehicle while sounding an alert.
+        </p>
+    </div>
+</section>
+
+<!-- Product Overview Section -->
+<div class="product-overview">
+    <h2>Product Overview</h2>
+    <div class="road">
+        <img src="{{ url_for('static', filename='assets/64366 - Copy.jpg') }}" class="car car-left" alt="Left Car">
+        <img src="{{ url_for('static', filename='assets/64366.jpg') }}" class="car car-right" alt="Right Car">
+        <div class="crash-effect">💥</div>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="content">
+    <div class="section">
+        <h2>Software-based</h2>
+        <p>Utilizes a trained AI model to monitor driver behavior through a camera, detecting drowsiness, phone usage, or distraction, and issuing an audible alert when eyes are closed for 3–4 seconds.</p>
+        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-02-06 at 19.18.44_1fde69e2.jpg') }}" alt="Software AI" class="content-image">
+    </div>
+
+    <div class="section">
+        <h2>Hardware-based</h2>
+        <p>Employs an eye blink sensor to monitor eye closure for 5 seconds, sending data to an Arduino Nano to reduce car speed via a relay and gear motor, while triggering an audible alert.</p>
+        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-02-06 at 19.20.58_dcfa09ed.jpg') }}" alt="Hardware AI" class="content-image">
+    </div>
+</div>
+
+<!-- AI DRIVE Developers Section -->
+<section class="developers">
+    <div class="developers-container">
+        <h3>AI DRIVE Developers</h3>
+        <p>Join our team of innovative thinkers and help us revolutionize the driving experience with cutting-edge AI technology. At AI DRIVE, we are creating solutions that not only enhance road safety but also shape the future of smart transportation systems.</p>
+        <p>As a part of the AI DRIVE development team, you will have the opportunity to work on groundbreaking technologies like driver monitoring, autonomous vehicles, and AI-driven safety features. We are committed to making roads safer and smarter for everyone, and we need passionate developers like you to make it happen.</p>
+        <p>We believe in open-source collaboration and invite you to contribute to our ongoing projects. Explore our GitHub repositories, report bugs, submit feature requests, or even share your own code improvements!</p>
+        <a href="https://github.com/aidrive" target="_blank" class="developers-link">Explore Our GitHub</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="#" class="footer-logo-link">
+                <img src="{{ url_for('static', filename='assets/nassar.png') }}" alt="AI DRIVE Logo" class="footer-logo-img">
+            </a>
+        </div>
+        <div class="footer-links">
+            <ul class="footer-nav">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#book-demo">Book a Demo</a></li>
+            </ul>
+            <ul class="footer-social">
+                <li><a href="https://linkedin.com/company/aidrive" target="_blank" class="social-icon">LinkedIn</a></li>
+                <li><a href="https://github.com/aidrive" target="_blank" class="social-icon">GitHub</a></li>
+            </ul>
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2025 AI DRIVE. All Rights Reserved.</p>
+            <p><a href="mailto:support@aidrive.com">Contact Us</a></p>
+            <p>Your trusted partner in AI-driven road safety.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
