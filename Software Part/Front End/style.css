@@ -1,0 +1,699 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #040404; /* Dark background for overall body */
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* General Navigation Styling */ 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background: #ffffff; /* White background for navigation */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Bar Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding to control height */
+    background-color: #fff; /* Change to your preferred background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Rotating Logo */
+.rotating-logo {
+    width: 50px; /* Adjust size */
+    height: 50px;
+    animation: rotateLogo 5s linear infinite; /* Infinite Rotation */
+}
+
+/* Rotating Animation */
+@keyframes rotateLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Logo Text */
+.logo a {
+    font-size: 24px;
+    color: #121212; /* Dark color for the logo */
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #00eaff;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Reduced gap for a more compact header */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #121212;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px; /* Reduced padding for a more compact header */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #00eaff;
+    transform: scale(1.1);
+}
+
+/* Menu Toggle (for mobile) */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links on smaller screens */
+    }
+    .menu-toggle {
+        display: block; /* Show menu toggle on smaller screens */
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Background Video */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensures it's behind the content */
+}
+
+/* Overlay Content */
+.overlay {
+    position: relative;
+    z-index: 1; /* Places the text above the video */
+    max-width: 700px;
+    padding: 20px;
+    color: #000000;
+}
+
+/* Heading Styling */
+.overlay h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 0px 0px 10px #00eaff;
+}
+
+/* Paragraph Styling */
+.overlay p {
+    font-size: 18px;
+    color: #000000;
+}
+/* Book Demo Section */
+.book-demo {
+    text-align: center;
+    background: #ffffff; /* Dark Background */
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Book Demo Content */
+.book-demo-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.book-demo h3 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.book-demo p {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.book-demo-button {
+    display: inline-block;
+    background: #00eaff;
+    color: #121212;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.book-demo-button:hover {
+    background: #00c2d9;
+}
+
+/* Car Container (Black Background for Cars) */
+.car-container {
+    width: 100%;
+    height: 60px; /* Adjust height if needed */
+    background: #ffffff; /* Pure black */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Positioning for Top and Bottom Car Tracks */
+.top-car-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bottom-car-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Car Track */
+.car-track {
+    display: flex;
+    gap: 8px; /* 8px = half-inch spacing */
+    white-space: nowrap;
+}
+
+/* Small Car (Super Fast Animation) */
+.small-car {
+    width: 70px;
+    animation: carRun 2s linear infinite; /* Super fast */
+}
+
+/* Car Animation */
+@keyframes carRun {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+/* Features Section */
+.features {
+    padding: 80px 20px;
+    background: #ffffff; /* White background for the features section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping of boxes if necessary */
+}
+
+.features h2 {
+    font-size: 28px;
+    color: #121212;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Feature List Container (Boxy Horizontal Layout) */
+.feature-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual Feature Box */
+.feature {
+    width: 280px; /* Width of each feature box */
+    padding: 30px;
+    background: #f5f5f5; /* Light gray background for the feature box */
+    border: 2px solid #00eaff; /* Border color for the box */
+    border-radius: 15px; /* Rounded corners for a boxy effect */
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease;
+}
+
+/* Feature Box Heading */
+.feature h3 {
+    font-size: 20px;
+    color: #121212;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Feature Box Description */
+.feature p {
+    color: #555555;
+    font-size: 14px;
+    margin-bottom: 10px; /* Adds spacing between description lines */
+}
+
+/* Hover effect for feature boxes */
+.feature:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Overview Section */
+.overview {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #000000, #121212); /* Gradient background from light blue to dark */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overview-container {
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.85); /* White with slight transparency */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    text-align: center;
+}
+
+.overview h2 {
+    font-size: 36px;
+    color: #121212;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.overview p {
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Adding a border at the bottom of the container for extra style */
+.overview-container::after {
+    content: "";
+    display: block;
+    margin-top: 30px;
+    border-bottom: 3px solid #000000;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* AI DRIVE Developers Section */
+.developers {
+    padding: 60px 20px;
+    background: #f5f5f5; /* Light gray background */
+    text-align: center;
+}
+
+.developers-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.developers h3 {
+    font-size: 28px;
+    color: #121212;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.developers p {
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.developers-link {
+    font-size: 18px;
+    color: #00eaff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #121212;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.developers-link:hover {
+    background-color: #00eaff;
+    color: #121212;
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #000; /* Black background */
+    color: #fff;
+    padding: 40px 10%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border-top: 5px solid #00eaff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+    margin-right: 30px;
+}
+
+.footer-logo-link {
+    text-decoration: none;
+}
+
+.footer-logo-img {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    transform: scale(1.1);
+}
+
+.footer-links {
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.footer-nav,
+.footer-social {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li,
+.footer-social li {
+    margin: 5px 0;
+}
+
+.footer-nav li a,
+.footer-social li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-nav li a:hover,
+.footer-social li a:hover {
+    color: #00eaff;
+    transform: translateY(-2px);
+}
+
+.footer-info {
+    flex: 1;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+    color: #00eaff;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-info {
+        margin-top: 20px;
+    }
+}
+
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide-in Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale-in Effect */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hero Section Animations */
+.hero .overlay {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Navigation Animation */
+.nav-container {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* Feature Boxes Animation */
+.feature {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s ease-in-out;
+}
+
+.feature:hover {
+    transform: scale(1);
+}
+
+/* Overview Section */
+.overview-container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Footer Animation */
+.footer {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+
+
+
+
+/* Heading Styling */
+/* Product Overview Heading */
+.product-overview h2 {
+    font-size: 32px; /* Slightly larger for better readability */
+    color: #ffffff; /* White font */
+    font-weight: 600; /* Semi-bold for a premium look */
+    font-family: 'Poppins', sans-serif; /* Modern and professional font */
+    text-transform: uppercase; /* Adds a sleek look */
+    letter-spacing: 1.5px; /* Enhances readability */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* Road & Car Animation */
+.road {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #000000;
+    overflow: hidden;
+}
+
+.car {
+    position: absolute;
+    width: 120px;
+    top: 50px;
+    transition: transform 2s ease-in-out;
+}
+
+.car-left {
+    left: -150px; /* Starts off-screen */
+}
+
+.car-right {
+    right: -150px; /* Starts off-screen */
+}
+
+.crash-effect {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    font-size: 40px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Content Styling */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 50px;
+}
+
+.section {
+    max-width: 400px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 22px;
+    color: #00eaff;
+}
+
+.section p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.content-image {
+    width: 200px; /* Set a fixed width */
+    height: 200px; /* Set a fixed height to make it a perfect circle */
+    margin-top: 20px;
+    border-radius:150%; /* This makes the image round */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    object-fit: cover; /* Ensures the image fills the circle properly */
+    border: 3px solid #ffffff; /* Optional: Adds a premium white border */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
